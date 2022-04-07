@@ -1,17 +1,15 @@
-public enum Spinner {
+import java.util.Random;
 
-    CHERRY(10),
-    BAR(20),
-    BELL(30),
-    SEVEN(40);
+public class Spinner {
 
-    private final int winnings;
+    private Symbols symbol;
 
-    Spinner(int winnings) {
-        this.winnings = winnings;
+    public void setRandomSymbol(){
+        int spin = new Random().nextInt(3);
+        symbol = Symbols.values()[spin];
     }
 
-    public int getWinnings() {
-        return winnings;
+    public Symbols getSymbol() {
+        return symbol;
     }
 }
